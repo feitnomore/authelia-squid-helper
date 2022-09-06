@@ -29,11 +29,10 @@ def getConfig():
     authelia_second = config['authelia']['secondfactor'] 
 
     config_authelia = {
-	    "host": authelia_host,
-        "port": authelia_port,
-	    "proto": authelia_proto,
-	    "first": authelia_first,
-        "second": authelia_second
+	"host": authelia_host,
+	"port": authelia_port,
+	"first": authelia_first,
+	"second": authelia_second
     }
 
     return config_authelia
