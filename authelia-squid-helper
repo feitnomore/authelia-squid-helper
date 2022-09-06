@@ -1,0 +1,39 @@
+## Filename: authelia-squid-helper
+ # Author: Marcelo Feitoza Parisi
+ # 
+ # Description: Wrapper shellscript
+ # to run authelia-squid-helper tool.
+ # 
+ # ###########################
+ # # DISCLAIMER - IMPORTANT! #
+ # ###########################
+ # 
+ # Stuff found here was built as a
+ # Proof-Of-Concept or Study material
+ # and should not be considered
+ # production ready!
+ # 
+ # USE WITH CARE!
+##
+
+MY_PYTHON=`which python3`
+
+# Gonna check if Python3 and Pip3 are installed
+if [ -z $MY_PYTHON ]
+then
+    echo "ERROR: Python3 not found"
+    echo "Python3 is a requirement to run this tool. Please make sure its installed and in your path."
+    echo ""
+    exit
+else
+    MY_BASE=`ps -ef | grep authelia-squid-helper | grep sh | awk '{print $9}'`
+    MY_BASE=`dirname $MY_BASE`
+    MY_HELPERS="$MY_BASE/helpers"
+    cd - 2>&1 >> /dev/null
+
+    # Run our program
+    cd $MY_BASE && $MY_PYTHON main.py
+
+    exit
+
+fi
