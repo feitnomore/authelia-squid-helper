@@ -15,11 +15,20 @@
  # 
  # USE WITH CARE!
 ##
+import sys
 from helpers import first_factor
 from helpers import second_factor
+from helpers import globalholders
 from helpers import config_authentication
 
 def main():
+
+	# Checking if config file was provided
+	if(len(sys.argv) != 2):
+		print("No config file provided")
+		sys.exit()
+	else:
+		globalholders.config_file = sys.argv[1]
 
 	# Loading Authentication Config
 	authentication = config_authentication.getConfig();

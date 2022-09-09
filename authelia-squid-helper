@@ -32,7 +32,7 @@ else
     cd - 2>&1 >> /dev/null
 
     # Run our program
-    cd $MY_BASE && $MY_PYTHON main.py
+    cd $MY_BASE && $MY_PYTHON main.py $@
 
     exit
 

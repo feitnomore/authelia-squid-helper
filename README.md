@@ -65,7 +65,7 @@ target_url = https://my-proxy-url.com/
 
 * Adjust your Squid configuration for authentication
 ```
-auth_param basic program /opt/authelia-squid-helper/authelia-squid-helper
+auth_param basic program /opt/authelia-squid-helper/authelia-squid-helper /opt/authelia-squid-helper/authelia.cfg
 acl ncsa_users proxy_auth REQUIRED
 http_access allow ncsa_users
 ```

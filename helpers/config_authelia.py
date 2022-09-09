@@ -16,10 +16,11 @@
  # USE WITH CARE!
 ##
 import configparser
+from helpers import globalholders
 
 def getConfig():
     config = configparser.ConfigParser()
-    config.read('authelia.cfg')
+    config.read(globalholders.config_file)
 
     # Authelia Config
     authelia_host = config['authelia']['host']
